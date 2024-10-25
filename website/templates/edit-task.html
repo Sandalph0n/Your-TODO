@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Edit</title>
+{% endblock %}k
+
+
+{% block body %}
+    
+<div class="form-container">
+    <p class="label-large">Add Task</p>
+  
+    <form method="POST" class="form-primary">
+      <input
+        type="text"
+        name="taskName"
+        id="taskName"
+        class="text-input"
+        placeholder="Enter task Name"
+        value="{{taskName}}"
+      />
+      <br />
+      <input
+        type="text"
+        name="deadline"
+        id="deadline"
+        class="text-input"
+        placeholder='Enter deadline for your task, format: "%d/%m/%Y, %H:%M:%S"'
+        value="{{deadline}}"
+      />
+      <br />
+  
+      <input
+        type="text"
+        name="content"
+        id="content"
+        class="text-input"
+        placeholder="Enter task description"
+        value="{{content}}"
+      />
+      <br>
+      <a href="/">Discard</a>
+      <button type="button" class="button-submit" onclick="editTask()" data="{{taskID}}" id="btn-apply">Apply</button>
+  
+      <script src='{{url_for("static", filename = "index.js")}}'></script>
+    </form>
+</div>
+  
+{% endblock %}

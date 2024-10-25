@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Sign up</title>
+{% endblock %}
+
+{% block body %}
+    <div class="form-container">
+        <p class="label-large">Sign up</p>
+        
+
+        <p class="label-small">Please fill this form to create new account</p>
+
+        <form method="POST" class="form-primary">
+            <input type="text" name="fullname" class="text-input" placeholder="Enter your fullname">
+            <br>
+            <input type="text" name="email" class="text-input" placeholder="Enter email">
+            <br>
+            <input type="password" name="password1" class="text-input" placeholder="Enter password">
+            <br>
+            <input type="password" name="password2" class="text-input" placeholder="Confirm password">
+            <br>
+            <button type="submit" class="button-submit">Sign up</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="task-container">
+    <h2>Welcome {{name}}</h2>
+    <a href='{{url_for("views.add_task")}}'>Create your new task!</a>
+    <br>
+
+    <div class="table-container">
+        <table class="task-display">
+            <tr>
+                <th>Task name</th>
+                <th>Deadline</th>
+                <th>Content</th>
+                <th>Action</th>
+            </tr>
+
+            {% if tasks %}
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{task.name}}</td>
+                        <td>{{task.deadline.strftime("%d/%m/%Y, %H:%M:%S")}}</td>
+                        <td>{{task.content}}</td>
+                        <td>
+                            <div>
+                                <a href="/delete-task/{{task.id}}" >Delete task</a>
+                                <a href="/edit-task/{{task.id}}">Edit task</a>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <p>There is no tag, create one ? :) </p>
+            {% endif %}
+        
+        </table>
+    </div>
+
+
+</div>
+
+{% endblock %}

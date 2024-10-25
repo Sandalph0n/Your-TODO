@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Sign in</title>
+{% endblock %}
+
+{% block body %}
+    <div class="form-container">
+        <p class="label-large">Sign in</p>
+        
+
+        <p class="label-small">Please sign in using email and password</p>
+
+        <form method="POST" class="form-primary">
+            
+            <input type="text" name="email" class="text-input" placeholder="Enter email">
+            <br>
+            <input type="password" name="password" class="text-input" placeholder="Enter password">
+            <br>
+            <button type="submit" class="button-submit">Sign in</button>
+        </form>
+    </div>
+{% endblock %}
